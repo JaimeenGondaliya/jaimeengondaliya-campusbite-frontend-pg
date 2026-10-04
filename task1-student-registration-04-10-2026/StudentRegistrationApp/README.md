@@ -1,97 +1,225 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# 📱 StudentRegistrationApp
 
-# Getting Started
+A professional **Student Registration** mobile application built with **React Native** and **TypeScript**. This app provides a clean, modern UI for registering student information with comprehensive form validation, date picker, image upload, and a detailed student details display screen.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+---
 
-## Step 1: Start Metro
+## 📋 Project Description
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+**StudentRegistrationApp** is a mobile application designed to streamline the student registration process. It features a multi-section registration form that captures personal, academic, and additional student information. The app enforces strict validation rules to ensure data accuracy and provides real-time error feedback to the user. Upon successful registration, the app navigates to a summary screen displaying all the submitted student details.
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+---
 
-```sh
-# Using npm
+## ✨ Features
+
+- 📝 **Multi-Section Registration Form** — Organized into Personal Information, Academic Information, and Additional Information sections
+- ✅ **Real-Time Form Validation** — Validates all required fields with descriptive error messages
+- 📅 **Custom Date Picker** — Built-in calendar modal with month/year selection for Date of Birth
+- 📸 **Passport Photo Upload** — Image picker integration with file size (2 MB) and format (JPG/PNG) validation
+- 🔘 **Gender Selection** — Radio-button-style selector with Male, Female, and Other options
+- 🎯 **Hobby Selection** — Multi-select checkbox grid for hobbies (Reading, Music, Sports, Traveling)
+- 📋 **Dropdown Selectors** — Modal-based pickers for Course, Semester, and City fields
+- 📄 **Student Details Display** — Summary screen showing all registered student data with a success message
+- 🔄 **Form Reset** — One-tap reset to clear all form fields
+- 🎨 **Professional UI Design** — Clean, modern interface with branded header and section numbering
+
+---
+
+## 🛠️ Technologies Used
+
+| Technology         | Description                                      |
+| ------------------ | ------------------------------------------------ |
+| **React Native**   | Cross-platform mobile app framework               |
+| **TypeScript**     | Statically typed superset of JavaScript            |
+| **React Navigation** | Screen navigation (Native Stack Navigator)      |
+| **Android Studio** | Android development IDE                           |
+| **Android Emulator (AVD)** | Android Virtual Device for testing        |
+| **react-native-image-picker** | Image selection from device gallery    |
+| **react-native-safe-area-context** | Safe area handling for all devices |
+| **react-native-screens** | Native navigation screen containers         |
+
+---
+
+## 🚀 Project Creation
+
+This project was created using the React Native Community CLI:
+
+```bash
+npx @react-native-community/cli@latest init StudentRegistrationApp
+```
+
+### Prerequisites
+
+Make sure you have the following installed before proceeding:
+
+- **Node.js** (>= 22.11.0)
+- **npm** (comes with Node.js)
+- **Java Development Kit (JDK)**
+- **Android Studio** with Android SDK
+- **Android Virtual Device (AVD)** configured in Android Studio
+
+> 📌 Follow the official [React Native Environment Setup](https://reactnative.dev/docs/set-up-your-environment) guide to configure your development environment.
+
+---
+
+## ▶️ How to Run
+
+### Step 1: Install Dependencies
+
+```bash
+cd StudentRegistrationApp
+npm install
+```
+
+### Step 2: Start Metro Bundler
+
+```bash
 npm start
-
-# OR using Yarn
-yarn start
 ```
 
-## Step 2: Build and run your app
+### Step 3: Run on Android
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+Open a new terminal and run:
 
-### Android
-
-```sh
-# Using npm
+```bash
 npm run android
-
-# OR using Yarn
-yarn android
 ```
 
-### iOS
+> 💡 Make sure your Android Emulator is running or a physical device is connected via USB debugging.
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+---
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+## 📝 Student Registration Form
 
-```sh
-bundle install
+The registration form is divided into **three sections** for a clean and organized user experience:
+
+### Section 01 — Personal Information
+
+| Field            | Type          | Required | Validation Rules                          |
+| ---------------- | ------------- | -------- | ----------------------------------------- |
+| Student Name     | Text Input    | ✅       | 2–50 characters                           |
+| Enrollment No    | Text Input    | ✅       | Cannot be empty                           |
+| Email            | Text Input    | ✅       | Must be a valid email format               |
+| Mobile           | Number Input  | ✅       | Exactly 10 digits                         |
+| Date of Birth    | Date Picker   | ✅       | Must be a valid past date (DD/MM/YYYY)     |
+| Age              | Number Input  | ❌       | Optional; must be between 18 and 60        |
+| Gender           | Radio Buttons | ✅       | Male / Female / Other                     |
+
+### Section 02 — Academic Information
+
+| Field    | Type     | Required | Options                                                    |
+| -------- | -------- | -------- | ---------------------------------------------------------- |
+| Course   | Dropdown | ✅       | B.Sc.IT, M.Sc.IT, BCA, MCA, BBA, MBA, B.Com, M.Com, B.Tech, M.Tech |
+| Semester | Dropdown | ✅       | 1, 2, 3, 4, 5, 6                                           |
+
+### Section 03 — Additional Information
+
+| Field               | Type           | Required | Validation Rules                       |
+| ------------------- | -------------- | -------- | -------------------------------------- |
+| Address             | Multiline Text | ✅       | Cannot be empty                        |
+| City                | Dropdown       | ✅       | Surat, Nadiad, Anand, Vadodara, Ahmedabad, Pune, Mumbai, Delhi, Bangalore, Chennai, Kolkata, Hyderabad |
+| Pincode             | Number Input   | ✅       | Valid 6-digit Indian pincode            |
+| Hobbies             | Checkboxes     | ✅       | Reading, Music, Sports, Traveling       |
+| Passport Size Photo | Image Upload   | ✅       | JPG/PNG only, max 2 MB                  |
+
+---
+
+## ✅ Validation
+
+The app implements comprehensive client-side validation to ensure data integrity:
+
+- **Required Field Checks** — All mandatory fields are validated before submission
+- **Email Format Validation** — Ensures the entered email follows a valid email pattern
+- **Mobile Number Validation** — Accepts only exactly 10 numeric digits
+- **Age Range Validation** — If provided, age must be between 18 and 60
+- **Pincode Validation** — Must be a valid 6-digit Indian pincode starting with a non-zero digit
+- **Photo Validation** — Only JPG/PNG files under 2 MB are accepted
+- **Date Validation** — Date of Birth must be a valid calendar date in the past
+- **Hobby Selection** — At least one hobby must be selected
+
+### Error Display
+
+- ⚠️ A **validation alert banner** appears at the top of the form when errors are detected
+- 🔴 Individual fields are highlighted with a **red error border**
+- ℹ️ Descriptive **error messages** are displayed below each invalid field
+- ✅ Errors are **cleared in real-time** as the user corrects the input
+
+---
+
+## 📸 Screenshots
+
+| Registration Form — Personal Info | Registration Form — Academic Info | Registration Form — Additional Info |
+| :-------------------------------: | :-------------------------------: | :---------------------------------: |
+| ![Personal Info](screenshots/personal_info.png) | ![Academic Info](screenshots/academic_info.png) | ![Additional Info](screenshots/additional_info.png) |
+
+| Registration Form — Actions | Student Details — Display |
+| :-------------------------: | :-----------------------: |
+| ![Actions](screenshots/actions.png) | ![Display](screenshots/display.png) |
+
+> 📌 Add your screenshots to a `screenshots/` folder in the project root directory.
+
+---
+
+## 📁 Project Structure
+
+```
+StudentRegistrationApp/
+├── App.tsx                          # Root component with SafeAreaProvider and Navigator
+├── index.js                         # App entry point
+├── app.json                         # App name configuration
+├── package.json                     # Dependencies and scripts
+├── tsconfig.json                    # TypeScript configuration
+├── babel.config.js                  # Babel configuration
+├── metro.config.js                  # Metro bundler configuration
+├── jest.config.js                   # Jest testing configuration
+├── .eslintrc.js                     # ESLint configuration
+├── .prettierrc.js                   # Prettier configuration
+├── Gemfile                          # Ruby dependencies (iOS)
+│
+└── src/
+    ├── components/
+    │   └── FormComponents.tsx       # Reusable form components (Field, SelectField, DateField, GenderOptions, HobbyOptions, PhotoField, SectionHeader)
+    │
+    ├── navigation/
+    │   └── AppNavigator.tsx         # Stack navigator with Registration and Display screens
+    │
+    ├── screens/
+    │   ├── Registration.tsx         # Student registration form screen
+    │   └── Display.tsx              # Student details display screen
+    │
+    ├── theme/
+    │   └── colors.ts                # App color palette constants
+    │
+    ├── types/
+    │   └── Student.ts               # TypeScript type definitions (StudentData, RegistrationForm, FieldErrors)
+    │
+    └── utils/
+        └── validation.ts            # Form validation logic
 ```
 
-Then, and every time you update your native dependencies, run:
+---
 
-```sh
-bundle exec pod install
-```
+## 🔮 Future Scope
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+- 🗄️ **Database Integration** — Store student records using SQLite or Firebase for persistent data storage
+- 🔐 **Authentication** — Add login/signup functionality for admin and student roles
+- 🔍 **Search & Filter** — Search registered students by name, enrollment number, or course
+- 📊 **Dashboard** — Admin dashboard with student statistics and analytics
+- ✏️ **Edit & Delete** — Allow editing and deleting registered student records
+- 📤 **Export Data** — Export student records as PDF or Excel files
+- 🌐 **API Integration** — Connect with a backend REST API for centralized data management
+- 🔔 **Push Notifications** — Notify students about registration status and updates
+- 🌙 **Dark Mode** — Add dark theme support for better accessibility
+- 📱 **iOS Support** — Extend and test the app for iOS devices
 
-```sh
-# Using npm
-npm run ios
+---
 
-# OR using Yarn
-yarn ios
-```
+## 👤 Author
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+**Jaimeen Gondaliya**
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+---
 
-## Step 3: Modify your app
+## 📄 License
 
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+This project is for educational purposes.
