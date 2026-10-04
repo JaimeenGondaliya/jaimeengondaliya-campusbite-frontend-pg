@@ -1,4 +1,4 @@
-﻿# Student Registration App
+# Student Registration App
 
 A clean and modern Student Registration mobile application built using **React Native** and **TypeScript**.
 
@@ -43,24 +43,24 @@ A clean and modern Student Registration mobile application built using **React N
 ### Installation & Run
 
 1. **Navigate to the project folder**:
-   `ash
+   ```bash
    cd StudentRegistrationApp
-   `
+   ```
 
 2. **Install dependencies**:
-   `ash
+   ```bash
    npm install
-   `
+   ```
 
 3. **Start the Metro bundler**:
-   `ash
+   ```bash
    npm start
-   `
+   ```
 
 4. **Run on Android**:
-   `ash
+   ```bash
    npm run android
-   `
+   ```
 
 ---
 
