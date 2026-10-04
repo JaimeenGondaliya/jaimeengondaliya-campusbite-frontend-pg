@@ -24,10 +24,11 @@ A clean and modern Student Registration mobile application built using **React N
 
 ## 🚀 Getting Started
 
-### Prerequisites
+### Project Creation
 
-- [Node.js](https://nodejs.org/) (>= 18)
-- [Android Studio](https://developer.android.com/studio) with configured Android SDK & AVD
+```bash
+npx @react-native-community/cli@latest init StudentRegistrationApp
+```
 
 ### Installation & Run
 
