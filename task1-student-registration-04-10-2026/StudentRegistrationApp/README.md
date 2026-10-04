@@ -12,17 +12,6 @@ A clean and modern Student Registration mobile application built using **React N
 
 ---
 
-## ✨ Features
-
-- **Personal Information** — Name, Enrollment No, Email, Mobile, Date of Birth, Age, and Gender
-- **Academic Information** — Course and Semester dropdown selection
-- **Additional Information** — Address, City, Pincode, Hobbies (checkboxes), and Passport Photo upload
-- **Form Validation** — Real-time validation with clear error feedback for required fields and invalid formats
-- **Student Summary Screen** — View registered details upon successful submission
-- **Reset Functionality** — One-tap form reset to clear all input fields
-
----
-
 ## 🛠️ Tech Stack
 
 - **React Native** (CLI)
