@@ -148,15 +148,9 @@ The app implements comprehensive client-side validation to ensure data integrity
 
 ## 📸 Screenshots
 
-| Registration Form — Personal Info | Registration Form — Academic Info | Registration Form — Additional Info |
-| :-------------------------------: | :-------------------------------: | :---------------------------------: |
-| ![Personal Info](screenshots/personal_info.png) | ![Academic Info](screenshots/academic_info.png) | ![Additional Info](screenshots/additional_info.png) |
-
-| Registration Form — Actions | Student Details — Display |
-| :-------------------------: | :-----------------------: |
-| ![Actions](screenshots/actions.png) | ![Display](screenshots/display.png) |
-
-> 📌 Add your screenshots to a `screenshots/` folder in the project root directory.
+| Personal Information | Academic Information | Additional Information & Submit |
+| :------------------: | :------------------: | :-----------------------------: |
+| <img src="screenshots/registration_screen_1.jpg" width="260" alt="Personal Information" /> | <img src="screenshots/registration_screen_2.jpg" width="260" alt="Academic Information" /> | <img src="screenshots/registration_screen_3.jpg" width="260" alt="Additional Information" /> |
 
 ---
 
@@ -220,6 +214,3 @@ StudentRegistrationApp/
 
 ---
 
-## 📄 License
-
-This project is for educational purposes.
